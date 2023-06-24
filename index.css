@@ -1,0 +1,56 @@
+* {
+    background-color: #606060;
+    font-family: "Poppins", sans-serif;
+}
+
+p {
+    background-color: #a300ff;
+    padding: 0 16px 0 16px;
+}
+
+.notification {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    width: max-content;
+    padding: 0.2rem 0.15rem;
+    border-radius: 4px;
+    background-color: #a300ff;
+    color: #f6f5f9;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(30px);
+    opacity: 0;
+    visibility: hidden;
+    animation: fade-in 4s linear forwards;
+}
+
+.notification-progress {
+    position: absolute;
+    left: 0.05rem;
+    bottom: 0.05rem;
+    width: calc(100% - 0.1rem);
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background-image: linear-gradient(to right, #f4dbff, #5d0097);
+    border-radius: inherit;
+    animation: load 3s 0.25s linear forwards;
+}
+
+@keyframes fade-in {
+    5% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    90% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes load {
+    to {
+        transform: scaleX(1);
+    }
+}
